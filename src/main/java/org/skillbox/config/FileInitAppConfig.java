@@ -15,12 +15,13 @@ import org.springframework.context.annotation.PropertySource;
 public class FileInitAppConfig {
 
     @Bean
-    public ContactsServ contactsServ() {
-        return new WithInitContactsServ(new ContactsRepo(), new StorageInitializer());
-    }
-
-    @Bean
     public StorageInitializer storageInitializer() {
         return new StorageInitializer();
     }
+
+    @Bean
+    public ContactsServ contactsServ(ContactsRepo contactsRepo, StorageInitializer storageInitializer) {
+        return new WithInitContactsServ(contactsRepo, storageInitializer);
+    }
+
 }
