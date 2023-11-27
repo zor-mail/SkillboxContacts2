@@ -11,7 +11,7 @@ public class StorageInitializer {
 
     Map<String, String> getInitializedStorage(String initFilePath) {
         Map<String, String> initializedStorage = new HashMap<>();
-        BufferedReader reader = null;
+        BufferedReader reader;
         if (initFilePath == null) {
             System.out.println("Не задан путь файла инициализации в файле свойств *.properties");
             return null;
