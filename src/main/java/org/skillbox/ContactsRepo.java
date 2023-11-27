@@ -1,5 +1,6 @@
 package org.skillbox;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.FileWriter;
@@ -13,6 +14,9 @@ import java.util.regex.Pattern;
 public class ContactsRepo  implements Storage {
     Map<String, String> storage = new HashMap<>();
 
+    @Value("${app.saved-contacts-file-path}")
+    String saveFilePath;
+
     @Override
     public void list() {
         if (storage.isEmpty())
@@ -25,7 +29,7 @@ public class ContactsRepo  implements Storage {
     }
 
     @Override
-    public void save(String saveFilePath) {
+    public void save() {
         try {
             File file = new File(saveFilePath);
             if (!file.createNewFile()) {

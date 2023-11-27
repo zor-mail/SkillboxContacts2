@@ -14,8 +14,6 @@ public class WithInitContactsServ implements ContactsServ {
     @Value("${app.init-contacts-file-path}")
     String initFilePath;
 
-    @Value("${app.saved-contacts-file-path}")
-    String saveFilePath;
 
     @Autowired
     public WithInitContactsServ(ContactsRepo contactsRepo, StorageInitializer storageInitializer) {
@@ -37,7 +35,7 @@ public class WithInitContactsServ implements ContactsServ {
 
     @Override
     public void save() {
-        contactsRepo.save(saveFilePath);
+        contactsRepo.save();
     }
 
     @Override

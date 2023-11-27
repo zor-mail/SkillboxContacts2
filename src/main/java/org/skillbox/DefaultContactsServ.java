@@ -6,9 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class DefaultContactsServ implements ContactsServ {
 
-    @Value("${app.saved-contacts-file-path}")
-    String saveFilePath;
-
     private final ContactsRepo contactsRepo;
 
     public DefaultContactsServ(ContactsRepo contactsRepo) {
@@ -22,7 +19,7 @@ public class DefaultContactsServ implements ContactsServ {
 
     @Override
     public void save() {
-        contactsRepo.save(saveFilePath);
+        contactsRepo.save();
     }
 
     @Override
