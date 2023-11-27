@@ -34,7 +34,6 @@ public class StorageInitializer {
                 reader.close();
             return null;
         }
-
         return initializedStorage;
     }
 }

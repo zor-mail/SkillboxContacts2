@@ -1,9 +1,6 @@
 package org.skillbox;
 
 import org.springframework.stereotype.Component;
-
-import javax.sound.sampled.AudioFormat;
-import java.beans.Encoder;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -22,6 +19,7 @@ public class ContactsWorker {
     private COMMANDS currentCommand;
     private Boolean inputOrCommand = false;
     public Scanner scanner;
+
     public void initApp() throws IOException {
         runInputInteraction();
     }
@@ -58,7 +56,6 @@ public class ContactsWorker {
         switch (this.currentCommand) {
             case LIST -> contactsServ.list();
             case SAVE -> contactsServ.save();
-
         }
     }
 
@@ -77,7 +74,6 @@ public class ContactsWorker {
         return this.currentCommand == COMMANDS.NEW || this.currentCommand == COMMANDS.DEL ||
                 this.currentCommand == COMMANDS.EXIT;
     }
-
 
     private void runInputInteraction() throws IOException {
         String inputString;
@@ -101,7 +97,6 @@ public class ContactsWorker {
                 if(!this.inputOrCommand)
                     this.currentCommand = COMMANDS.NONE;
             }
-
         }
     }
 
@@ -123,5 +118,4 @@ public class ContactsWorker {
             System.exit(0);
         }
     }
-
 }

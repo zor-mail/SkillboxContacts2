@@ -8,7 +8,8 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(DefaultAppConfig.class);
+        ApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(DefaultAppConfig.class);
         applicationContext.getBean(ContactsWorker.class).initApp();
     }
 }

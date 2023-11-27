@@ -1,30 +1,17 @@
 package org.skillbox;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
 @Component
 public class ContactsRepo  implements Storage {
     Map<String, String> storage = new HashMap<>();
-
-    @Override
-    public String get(String email) throws IOException {
-        String record = storage.get(email);
-        if (record == null)
-            throw new IOException(MessageFormat.format("Запись с email {0} не найдена", email));
-        else
-            System.out.println(record);
-        return null;
-    }
 
     @Override
     public void list() {

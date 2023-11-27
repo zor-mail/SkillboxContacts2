@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/build.gradle.kts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/ContactsRepo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/ContactsServ.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/ContactsWorker.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/DefaultContactsServ.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/Storage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/StorageInitializer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/WithInitContactsServ.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/config/DefaultAppConfig.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/skillbox/config/FileInitAppConfig.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application-file-init.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application-file-init.yaml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application.yaml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/init-contacts.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/saved-contacts.txt" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
