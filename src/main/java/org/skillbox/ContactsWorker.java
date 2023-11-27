@@ -2,6 +2,7 @@ package org.skillbox;
 
 import org.springframework.stereotype.Component;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 enum COMMANDS {
@@ -20,7 +21,7 @@ public class ContactsWorker {
     private Boolean inputOrCommand = false;
     public Scanner scanner;
 
-    public void initApp() throws IOException {
+    public void initApp() {
         runInputInteraction();
     }
 
@@ -49,7 +50,7 @@ public class ContactsWorker {
         return command;
     }
 
-    private void executeCommand() throws IOException {
+    private void executeCommand()  {
         if (this.currentCommand == null || this.currentCommand == COMMANDS.NONE) {
             return;
         }
@@ -59,7 +60,7 @@ public class ContactsWorker {
         }
     }
 
-    private void executeCommandWithParam(String param) throws IOException {
+    private void executeCommandWithParam(String param) {
         if (this.currentCommand == null || this.currentCommand == COMMANDS.NONE) {
             return;
         }
@@ -75,9 +76,9 @@ public class ContactsWorker {
                 this.currentCommand == COMMANDS.EXIT;
     }
 
-    private void runInputInteraction() throws IOException {
+    private void runInputInteraction() {
         String inputString;
-        this.scanner = new Scanner(System.in, "UTF-8");
+        this.scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         System.out.println("\t\t*** Приложение Контакты готово к работе ***\n");
         this.currentCommand = COMMANDS.NONE;
         while (true) {
@@ -112,7 +113,7 @@ public class ContactsWorker {
     }
 
     private void exitProgram(String param) {
-        if (param.toUpperCase().equals("Y")) {
+        if (param.equalsIgnoreCase("Y")) {
             this.currentCommand = COMMANDS.EXIT;
             this.scanner.close();
             System.exit(0);

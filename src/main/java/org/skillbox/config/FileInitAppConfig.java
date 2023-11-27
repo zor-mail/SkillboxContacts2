@@ -16,12 +16,12 @@ import java.io.IOException;
 public class FileInitAppConfig {
 
     @Bean
-    public ContactsServ contactsServ() throws IOException {
+    public ContactsServ contactsServ() {
         return new WithInitContactsServ(new ContactsRepo(), new StorageInitializer());
     }
 
     @Bean
-    public StorageInitializer storageInitializer() throws IOException {
+    public StorageInitializer storageInitializer() {
         return new StorageInitializer();
     }
 }

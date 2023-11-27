@@ -19,13 +19,13 @@ public class WithInitContactsServ implements ContactsServ {
     String saveFilePath;
 
     @Autowired
-    public WithInitContactsServ(ContactsRepo contactsRepo, StorageInitializer storageInitializer) throws IOException {
+    public WithInitContactsServ(ContactsRepo contactsRepo, StorageInitializer storageInitializer) {
         this.storageInitializer = storageInitializer;
         this.contactsRepo = contactsRepo;
     }
 
     @PostConstruct
-    private void initPostConstruct() throws IOException {
+    private void initPostConstruct() {
         this.contactsRepo.initStorage(
                 this.storageInitializer.getInitializedStorage(initFilePath)
         );
@@ -37,17 +37,17 @@ public class WithInitContactsServ implements ContactsServ {
     }
 
     @Override
-    public void save() throws IOException {
+    public void save() {
         contactsRepo.save(saveFilePath);
     }
 
     @Override
-    public void add(String record) throws IOException {
+    public void add(String record) {
         contactsRepo.add(record);
     }
 
     @Override
-    public void delete(String email) throws IOException {
+    public void delete(String email) {
         contactsRepo.delete(email);
     }
 }

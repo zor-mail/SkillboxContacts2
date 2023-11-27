@@ -9,9 +9,8 @@ import java.util.Map;
 
 public class StorageInitializer {
 
-    Map<String, String> getInitializedStorage(String initFilePath) throws IOException {
+    Map<String, String> getInitializedStorage(String initFilePath) {
         Map<String, String> initializedStorage = new HashMap<>();
-        String newRecord;
         BufferedReader reader = null;
         if (initFilePath == null) {
             System.out.println("Не задан путь файла инициализации в файле свойств *.properties");
@@ -30,8 +29,6 @@ public class StorageInitializer {
             reader.close();
         } catch (IOException e) {
             System.out.println("Ошибка чтения файла инициализации. Проверьте правильность пути и формата запиcей");
-            if (reader != null)
-                reader.close();
             return null;
         }
         return initializedStorage;

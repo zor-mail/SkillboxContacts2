@@ -25,7 +25,7 @@ public class ContactsRepo  implements Storage {
     }
 
     @Override
-    public void save(String saveFilePath) throws IOException {
+    public void save(String saveFilePath) {
         try {
             File file = new File(saveFilePath);
             if (!file.createNewFile()) {
@@ -55,7 +55,7 @@ public class ContactsRepo  implements Storage {
     }
 
     @Override
-    public void add(String record) throws IOException {
+    public void add(String record) {
         String email = parseRecordString(record, this.storage);
         if (email != null) {
             storage.put(email, record);
@@ -65,7 +65,7 @@ public class ContactsRepo  implements Storage {
 
     public static String parseRecordString(String record, Map<String, String> storage) {
         String[] recordParts = record.split(";");
-        if (recordParts == null || recordParts.length != 3) {
+        if (recordParts.length != 3) {
             System.out.println("В контакте должны быть 3 части, разделенные точкой с запятой. Запись: " + record);
             return null;
         }
@@ -108,7 +108,7 @@ public class ContactsRepo  implements Storage {
     }
 
     @Override
-    public void delete(String email) throws IOException {
+    public void delete(String email) {
         String removed = storage.remove(email);
         if (removed == null)
             System.out.println(MessageFormat.format("Запись для удаления с email {0} не найдена", email));
@@ -116,7 +116,7 @@ public class ContactsRepo  implements Storage {
             System.out.println(MessageFormat.format("Запись с email {0} успешно удалена", email));
     }
 
-    public void initStorage(Map<String, String> initializedStorage) throws IOException {
+    public void initStorage(Map<String, String> initializedStorage) {
         if (initializedStorage != null) {
             this.storage = initializedStorage;
             System.out.println("Хранилище успешно инициализировано из файла");

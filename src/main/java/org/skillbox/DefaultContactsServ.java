@@ -3,9 +3,6 @@ package org.skillbox;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import java.io.IOException;
-
 @Component
 public class DefaultContactsServ implements ContactsServ {
 
@@ -24,17 +21,17 @@ public class DefaultContactsServ implements ContactsServ {
     }
 
     @Override
-    public void save() throws IOException {
+    public void save() {
         contactsRepo.save(saveFilePath);
     }
 
     @Override
-    public void add(String record) throws IOException {
+    public void add(String record) {
         contactsRepo.add(record);
     }
 
     @Override
-    public void delete(String email) throws IOException {
+    public void delete(String email) {
         contactsRepo.delete(email);
     }
 }
